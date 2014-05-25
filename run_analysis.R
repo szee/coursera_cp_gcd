@@ -34,21 +34,21 @@ rownames(mean_std) = NULL
 ## Naming activities and labeling dataset
 
 for (k in 1:length(mean_std$name)){
-   mean_std$name[k] <- gsub("-mean", "Mean", mean_std$name[k])
-   mean_std$name[k] <- gsub("-std", "Std", mean_std$name[k])
-   mean_std$name[k] <- gsub("body", "Body", mean_std$name[k])
-   mean_std$name[k] <- gsub("acc", "Acc", mean_std$name[k])
-   mean_std$name[k] <- gsub("gravity", "Gravity", mean_std$name[k])
-   mean_std$name[k] <- gsub("jerk", "Jerk", mean_std$name[k])
-   mean_std$name[k] <- gsub("gyro", "Gyro", mean_std$name[k])
-   mean_std$name[k] <- gsub("mag", "Mag", mean_std$name[k])
-   mean_std$name[k] <- gsub("-x", "X", mean_std$name[k])
-   mean_std$name[k] <- gsub("-y", "Y", mean_std$name[k])
-   mean_std$name[k] <- gsub("-z", "Z", mean_std$name[k])
- }
+  mean_std$name[k] <- gsub("-mean", "Mean", mean_std$name[k])
+  mean_std$name[k] <- gsub("-std", "Std", mean_std$name[k])
+  mean_std$name[k] <- gsub("body", "Body", mean_std$name[k])
+  mean_std$name[k] <- gsub("acc", "Acc", mean_std$name[k])
+  mean_std$name[k] <- gsub("gravity", "Gravity", mean_std$name[k])
+  mean_std$name[k] <- gsub("jerk", "Jerk", mean_std$name[k])
+  mean_std$name[k] <- gsub("gyro", "Gyro", mean_std$name[k])
+  mean_std$name[k] <- gsub("mag", "Mag", mean_std$name[k])
+  mean_std$name[k] <- gsub("-x", "X", mean_std$name[k])
+  mean_std$name[k] <- gsub("-y", "Y", mean_std$name[k])
+  mean_std$name[k] <- gsub("-z", "Z", mean_std$name[k])
+}
 
 data <- data[,mean_std$id]
-names(data) <- mean_std$names
+names(data) <- mean_std$name
 data <- cbind(labels, subject, data)
 
 
