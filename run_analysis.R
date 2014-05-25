@@ -34,6 +34,7 @@ rownames(mean_std) = NULL
 ## Naming activities and labeling dataset
 
 for (k in 1:length(mean_std$name)){
+  mean_std$name[k] <- gsub("\\()",'',mean_std$name[k])
   mean_std$name[k] <- gsub("-mean", "Mean", mean_std$name[k])
   mean_std$name[k] <- gsub("-std", "Std", mean_std$name[k])
   mean_std$name[k] <- gsub("body", "Body", mean_std$name[k])
